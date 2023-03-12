@@ -21,22 +21,24 @@ app.post("/slack", (req, res, next) => {
             "message":"success",
             "user": req.body.text
         };
-  var args = {
-  	data: data,
-  	headers: { "Content-Type": "application/json" }
-  };
- client.post("https://naas-waas.free.beeceptor.com/my/api/path", args, function (response_data, response) {
-	 console.log(response_data);
-	 console.log(response);
-   res.json(data);
-
-  });
+ console.log(data);        
+ res.json(data);
+// var args = {
+//   	data: data,
+//   	headers: { "Content-Type": "application/json" }
+//   };
+//  client.post("https://naas-waas.free.beeceptor.com/my/api/path", args, function (response_data, response) {
+// 	 console.log(response_data);
+// 	 console.log(response);
+//    res.json(data);
+//
+//   });
 
 
 
 })
 
-app.get("/slack", (req, res, next) => {
+app.get("/", (req, res, next) => {
 
 res.json({
             "message":"success",
