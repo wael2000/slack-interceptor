@@ -15,13 +15,13 @@ app.listen(HTTP_PORT, () => {
     console.log("Server running on port %PORT%".replace("%PORT%",HTTP_PORT))
 });
 
-app.post("/slack", (req, res, next) => {
+app.post("/", (req, res, next) => {
  console.log(req.body.text);
  var data = {
             "message":"success",
             "user": req.body.text
         };
- console.log(data);        
+ console.log(data);
  res.json(data);
 // var args = {
 //   	data: data,
