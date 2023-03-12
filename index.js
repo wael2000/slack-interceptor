@@ -21,18 +21,21 @@ app.post("/", (req, res, next) => {
             "message":"success",
             "user": req.body.text
         };
- console.log(data);
- res.json(data);
-// var args = {
-//   	data: data,
-//   	headers: { "Content-Type": "application/json" }
-//   };
-//  client.post("https://naas-waas.free.beeceptor.com/my/api/path", args, function (response_data, response) {
-// 	 console.log(response_data);
-// 	 console.log(response);
-//    res.json(data);
-//
-//   });
+ //console.log(data);
+ //res.json(data);
+ var args = {
+   	data: data,
+    "message":"success",
+    "user": req.body.text,
+   	headers: { "Content-Type": "application/json" }
+   };
+  client.post("http://el-demo-slack-event-listener-devspaces.apps.cluster-nzpkj.nzpkj.sandbox410.opentlc.com",
+              args,
+              function (response_data, response) {
+ 	              console.log(response_data);
+ 	              //console.log(response);
+                res.json(data);
+   });
 
 
 
