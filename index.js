@@ -19,7 +19,9 @@ app.post("/", (req, res, next) => {
  console.log(req.body.text);
  var data = {
             "message":"success",
-            "user": req.body.text
+            "battalion": req.body.text,
+            "battalion_id" : 1,
+            "action" : "deploy"
         };
  //console.log(data);
  //res.json(data);
@@ -29,7 +31,7 @@ app.post("/", (req, res, next) => {
     "user": req.body.text,
    	headers: { "Content-Type": "application/json" }
    };
-  client.post("http://el-demo-slack-event-listener-devspaces.apps.cluster-nzpkj.nzpkj.sandbox410.opentlc.com",
+  client.post("http://el-battalion-event-listener-command-post.apps.cluster-qjtjg.dynamic.opentlc.com",
               args,
               function (response_data, response) {
  	              console.log(response_data);
